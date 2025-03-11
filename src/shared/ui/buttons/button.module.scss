@@ -1,14 +1,13 @@
 .button {
-display: flex;
-justify-content: center;
-align-items: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  border: 1px black solid;
+  border-radius: 20px;
 
-padding: 10px;
-border: 1px black solid;
-border-radius: 20px;
-
-&:hover {
-  background-color: beige;
-  cursor: pointer;
-}
+  &:hover {
+    cursor: pointer;
+    background-color: beige;
+  }
 }

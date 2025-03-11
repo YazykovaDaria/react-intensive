@@ -9,7 +9,7 @@ export const Header = () => (
         <li className={s.item}>
           <NavLink
             to={routes.main.getLink()}
-            className={({ isActive }) => isActive && s.active}
+            className={({ isActive }) => (isActive ? s.active : '')}
           >
             Home Page
           </NavLink>
@@ -17,7 +17,7 @@ export const Header = () => (
         <li className={s.item}>
           <NavLink
             to={routes.randomPost.getLink()}
-            className={({ isActive }) => isActive && s.active}
+            className={({ isActive }) => (isActive ? s.active : '')}
           >
             Post Page
           </NavLink>

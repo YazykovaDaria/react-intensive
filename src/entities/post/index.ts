@@ -1,0 +1,1 @@
+export { getPostApi } from './api';
