@@ -3,8 +3,8 @@
         "target": "es2017",
         "jsx": "react-jsx",
         "moduleResolution": "node",
-        "lib": ["dom", "es2020"],
-        "module": "esnext",
+        "lib": ["ES2020", "DOM", "DOM.Iterable"],
+        "module": "ESNext",
         "allowSyntheticDefaultImports": true,
         "baseUrl": ".",
           "paths": {
@@ -12,7 +12,7 @@
             "@app/*": ["./src/app/*"],
             "@views/*": ["./src/views/*"],
             "@widgets/*": ["./src/widgets/*"],
-            "@features/*": ["./src/features/*"],
+            "@pages/*": ["./src/pages/*"],
             "@entities/*": ["./src/entities/*"],
             "@shared/*": ["./src/shared/*"]
         },
