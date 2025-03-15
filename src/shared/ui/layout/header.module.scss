@@ -1,0 +1,22 @@
+
+.header {
+  padding-block: 1rem;
+}
+
+.list {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.item {
+  &:hover {
+    color: green;
+  }
+}
+
+.active {
+  color: blue;
+  pointer-events: none;
+}
