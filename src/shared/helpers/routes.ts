@@ -6,6 +6,7 @@ interface Route {
 interface Routes {
   main: Route;
   randomPost: Route;
+  landing: Route;
 }
 
 export const routes: Routes = {
@@ -16,5 +17,9 @@ export const routes: Routes = {
   randomPost: {
     getLink: () => '/random-post',
     pathname: '/random-post',
+  },
+  landing: {
+    getLink: () => '/landing',
+    pathname: '/landing',
   },
 };
