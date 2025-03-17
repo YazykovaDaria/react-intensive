@@ -1,0 +1,17 @@
+@use '@styles' as s;
+
+.input {
+  padding: 20px;
+  border: 1px solid s.$color-border;
+  border-radius: 20px;
+
+  &::placeholder {
+    color: s.$color-border;
+  }
+
+  &:focus{
+    border-color: s.$color-bg-btn;
+
+    @include s.transition(border-color);
+  }
+}
