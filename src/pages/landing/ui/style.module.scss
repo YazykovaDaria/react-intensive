@@ -1,0 +1,15 @@
+@use '@styles' as s;
+
+.screen {
+
+  @include s.flex-col(14px, center, center);
+
+  height: 100vh;
+  padding: 20px;
+  text-align: center;
+
+  h1, h2 {
+    font-size: 24px;
+  }
+
+}
