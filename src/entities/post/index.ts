@@ -1,1 +1,0 @@
-export { getPostApi } from './api';
