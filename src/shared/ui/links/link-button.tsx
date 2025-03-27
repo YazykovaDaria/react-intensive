@@ -2,9 +2,9 @@ import { ComponentProps } from 'react';
 import clsx from 'clsx';
 import s from './style.module.scss';
 
-interface LinkProps extends ComponentProps<'a'> {
+type LinkProps = {
   customStyle?: string;
-}
+} & ComponentProps<'a'>;
 
 export const LinkButton = ({
   children,

@@ -1,13 +1,13 @@
-interface Route {
+type Route = {
   getLink: () => string;
   pathname: string;
-}
+};
 
-interface Routes {
+type Routes = {
   main: Route;
   randomPost: Route;
   landing: Route;
-}
+};
 
 export const routes: Routes = {
   main: {

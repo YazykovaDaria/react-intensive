@@ -1,5 +1,5 @@
 import { ComponentProps } from 'react';
 
-export interface IconProps extends ComponentProps<'svg'> {
+export type IconProps = {
   customStyle?: string;
-}
+} & ComponentProps<'svg'>;
