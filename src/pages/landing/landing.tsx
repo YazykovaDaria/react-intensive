@@ -1,13 +1,7 @@
 import s from './style.module.scss';
 import { Section } from './ui/section';
-import {
-  LandingCard,
-  Input,
-  LinkButton,
-  EyeIcon,
-  InfoIcon,
-  Button,
-} from '@shared/index';
+import { LandingCard, LinkButton, EyeIcon } from '@shared/index';
+import { Interactive } from './interactive/interactive';
 
 const cardsContent = [
   {
@@ -46,15 +40,7 @@ export const LandingPage = () => {
 
       <Section customStyle={s.block}>
         <h2 className={s.title}>Интерактив?</h2>
-
-        <Input type="text" placeholder="Напишите тут что-нибудь"></Input>
-
-        <Button onClick={() => alert()}>
-          <div className={s.btn}>
-            <span>Вывести текст в alert</span>
-            <InfoIcon customStyle={s.red}></InfoIcon>
-          </div>
-        </Button>
+        <Interactive></Interactive>
       </Section>
     </main>
   );
