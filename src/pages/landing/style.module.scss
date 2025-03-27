@@ -1,0 +1,41 @@
+@use '@styles' as s;
+
+$bg-accent: #e0e0e0;
+
+.exampleHomework {
+	padding: 0;
+	margin: 0;
+	overflow-x: hidden;
+	font-family: Arial, sans-serif;
+}
+
+.cardsContainer {
+
+	@include s.flexRow(20px, center, center);
+
+	flex-wrap: wrap;
+	width: 100%;
+}
+
+.block {
+	width: 101vw;
+	max-width: 100%;
+}
+
+.bgAccent {
+	background-color: $bg-accent;
+}
+
+.btn{
+	@include s.flexRow(10px, center, center);
+
+	color: s.$color-contrast;
+}
+
+.red {
+	color: red;
+}
+
+.title {
+	font-size: 24px;
+}

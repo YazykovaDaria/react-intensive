@@ -1,0 +1,10 @@
+@use '@styles' as s;
+
+.screen {
+
+  @include s.flexCol(14px, center, center);
+
+  height: 100vh;
+  padding: 20px;
+  text-align: center;
+}

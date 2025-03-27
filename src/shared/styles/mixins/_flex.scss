@@ -1,0 +1,53 @@
+@mixin flexCol($gap: null, $align: null, $justify: null) {
+  display: flex;
+  flex-direction: column;
+
+  @if $justify {
+    justify-content: $justify;
+  }
+
+  @if $align {
+    align-items: $align;
+  }
+
+  @if $gap {
+    gap: $gap;
+  }
+}
+
+@mixin flexRow($gap: null, $align: null, $justify: null) {
+  display: flex;
+  flex-direction: row;
+
+  @if $justify {
+    justify-content: $justify;
+  }
+
+  @if $align {
+    align-items: $align;
+  }
+
+  @if $gap {
+    gap: $gap;
+  }
+}
+
+@mixin flexInline($gap: null, $direction: null, $align: null, $justify: null) {
+  display: inline-flex;
+
+  @if $direction {
+    flex-direction: $direction;
+  }
+
+  @if $justify {
+    justify-content: $justify;
+  }
+
+  @if $align {
+    align-items: $align;
+  }
+
+  @if $gap {
+    gap: $gap;
+  }
+}

@@ -1,0 +1,21 @@
+@use '@styles' as s;
+
+$bg-hover: rgb(115 0 255);
+
+.linkBtn {
+
+  @include s.flexRow(5px, center, center);
+
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: s.$color-contrast;
+  cursor: pointer;
+  background-color: s.$color-bg-btn;
+  border-radius: 10px;
+
+  @include s.hover {
+    background-color: $bg-hover;
+
+    @include s.transition(background-color);
+  }
+}
