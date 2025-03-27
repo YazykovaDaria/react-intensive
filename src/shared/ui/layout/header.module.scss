@@ -1,18 +1,17 @@
+@use '@styles' as s;
 
 .header {
   padding-block: 1rem;
 }
 
 .list {
-  display: flex;
-  gap: 20px;
-  align-items: center;
-  justify-content: center;
+  @include s.flexRow(20px, center, center);
 }
 
 .item {
-  &:hover {
+  @include s.hover() {
     color: green;
+    @include s.transition(color);
   }
 }
 

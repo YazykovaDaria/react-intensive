@@ -12,7 +12,7 @@
   }
 
   @media (hover: none) {
-    @include active() {
+    @include active {
       @content;
     }
   }

@@ -2,7 +2,7 @@
 
 .screen {
 
-  @include s.flex-col(14px, center, center);
+  @include s.flexCol(14px, center, center);
 
   height: 100vh;
   padding: 20px;

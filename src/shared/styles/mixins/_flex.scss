@@ -1,53 +1,53 @@
-@mixin flex-col($gap: null, $align: null, $justify: null) {
+@mixin flexCol($gap: null, $align: null, $justify: null) {
   display: flex;
   flex-direction: column;
 
-  @if $justify != null {
+  @if $justify {
     justify-content: $justify;
   }
 
-  @if $align != null {
+  @if $align {
     align-items: $align;
   }
 
-  @if $gap != null {
+  @if $gap {
     gap: $gap;
   }
 }
 
-@mixin flex-row($gap: null, $align: null, $justify: null) {
+@mixin flexRow($gap: null, $align: null, $justify: null) {
   display: flex;
   flex-direction: row;
 
-  @if $justify != null {
+  @if $justify {
     justify-content: $justify;
   }
 
-  @if $align != null {
+  @if $align {
     align-items: $align;
   }
 
-  @if $gap != null {
+  @if $gap {
     gap: $gap;
   }
 }
 
-@mixin flex-inline($gap: null, $direction: null, $align: null, $justify: null) {
+@mixin flexInline($gap: null, $direction: null, $align: null, $justify: null) {
   display: inline-flex;
 
-  @if $direction != null {
+  @if $direction {
     flex-direction: $direction;
   }
 
-  @if $justify != null {
+  @if $justify {
     justify-content: $justify;
   }
 
-  @if $align != null {
+  @if $align {
     align-items: $align;
   }
 
-  @if $gap != null {
+  @if $gap {
     gap: $gap;
   }
 }
