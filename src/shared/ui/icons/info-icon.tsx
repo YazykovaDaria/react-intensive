@@ -1,6 +1,6 @@
 import { IconProps } from './types';
 
-const InfoIcon = ({ customStyle, ...props }: IconProps) => (
+export const InfoIcon = ({ customStyle, ...props }: IconProps) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="16"
@@ -21,5 +21,3 @@ const InfoIcon = ({ customStyle, ...props }: IconProps) => (
     </defs>
   </svg>
 );
-
-export default InfoIcon;

@@ -1,5 +1,5 @@
 export const MainPage = () => (
   <section>
-    <h1>Main Page</h1>
+    <h1 className="title">Main Page</h1>
   </section>
 );

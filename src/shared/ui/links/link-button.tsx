@@ -6,7 +6,7 @@ interface LinkProps extends ComponentProps<'a'> {
   customStyle?: string;
 }
 
-export const LinkBtn = ({
+export const LinkButton = ({
   children,
   href,
   customStyle,

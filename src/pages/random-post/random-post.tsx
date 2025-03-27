@@ -1,8 +1,8 @@
 import s from './style.module.scss';
 import { useState } from 'react';
-import { Button } from '@shared/ui';
+import { Button } from '@shared/index';
 import { getRandomPostApi } from './api';
-import { PostType } from '@entities/post/types';
+import { PostType } from '@entities/post';
 
 export const RandomPostPage = () => {
   const [post, setPost] = useState<PostType | null>(null);
@@ -17,7 +17,9 @@ export const RandomPostPage = () => {
       setPost(post);
       setErr('');
     } catch (err) {
-      setErr(err.message);
+      if (err instanceof Error) {
+        setErr(err.message);
+      }
     } finally {
       setLoading(false);
     }
@@ -25,7 +27,7 @@ export const RandomPostPage = () => {
 
   return (
     <section className={s.section}>
-      <h1>Random post</h1>
+      <h1 className="title">Random post</h1>
       {post ? (
         <p>{post.title}</p>
       ) : (

@@ -1,6 +1,6 @@
 import { IconProps } from './types';
 
-const EyeIcon = ({ customStyle, ...props }: IconProps) => (
+export const EyeIcon = ({ customStyle, ...props }: IconProps) => (
   <svg
     width="18"
     height="16"
@@ -22,5 +22,3 @@ const EyeIcon = ({ customStyle, ...props }: IconProps) => (
     />
   </svg>
 );
-
-export default EyeIcon;

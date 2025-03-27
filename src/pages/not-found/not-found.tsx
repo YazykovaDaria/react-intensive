@@ -1,5 +1,5 @@
 export const NotFoundPage = () => (
   <section>
-    <h1>Page not found</h1>
+    <h1 className="title">Page not found</h1>
   </section>
 );

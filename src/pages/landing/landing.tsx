@@ -1,8 +1,13 @@
 import s from './style.module.scss';
 import { Section } from './ui/section';
-import { LandingCard, Input, LinkBtn } from '@shared/index';
-import EyeIcon from '@shared/ui/icons/eye';
-import InfoIcon from '@shared/ui/icons/info';
+import {
+  LandingCard,
+  Input,
+  LinkButton,
+  EyeIcon,
+  InfoIcon,
+  Button,
+} from '@shared/index';
 
 const cardsContent = [
   {
@@ -19,19 +24,19 @@ export const LandingPage = () => {
   return (
     <main className={s.exampleHomework}>
       <Section>
-        <h1>Интересные факты про эту страницу</h1>
+        <h1 className={s.title}>Интересные факты про эту страницу</h1>
 
-        <h2>В ней нет смысла</h2>
-        <LinkBtn href="#second-screen">
+        <p className={s.title}>В ней нет смысла</p>
+        <LinkButton href="#second-screen">
           <div className={s.btn}>
             <span>Перейти дальше</span>
             <EyeIcon></EyeIcon>
           </div>
-        </LinkBtn>
+        </LinkButton>
       </Section>
 
       <Section id="second-screen" customStyle={s.bgAccent}>
-        <h2>Смотрите какие карточки</h2>
+        <h2 className={s.title}>Смотрите какие карточки</h2>
         <div className={s.cardsContainer}>
           {cardsContent.map((card, i) => (
             <LandingCard {...card} key={i}></LandingCard>
@@ -40,16 +45,16 @@ export const LandingPage = () => {
       </Section>
 
       <Section customStyle={s.block}>
-        <h2>Интерактив?</h2>
+        <h2 className={s.title}>Интерактив?</h2>
 
         <Input type="text" placeholder="Напишите тут что-нибудь"></Input>
 
-        <LinkBtn href="#">
+        <Button onClick={() => alert()}>
           <div className={s.btn}>
             <span>Вывести текст в alert</span>
             <InfoIcon customStyle={s.red}></InfoIcon>
           </div>
-        </LinkBtn>
+        </Button>
       </Section>
     </main>
   );
