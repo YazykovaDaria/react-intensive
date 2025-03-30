@@ -1,28 +1,6 @@
-
+@use '@styles' as s;
 
 .container {
-	display: flex;
-	justify-content: center;
-	align-items: center;
+	@include s.flexRow(null, center, center);
 	min-height: 100vh;
-}
-
-.navigation {
-	padding: 10px;
-	border: 1px solid #ccc;
-}
-
-.navigationLv1 {
-	margin: 20px 0;
-}
-
-.navigationLv2 {
-	padding-left: 20px;
-	margin: 10px 0;
-}
-
-.navigationLv3 {
-	padding-left: 20px;
-	margin: 10px 0;
-	color: blue;
 }

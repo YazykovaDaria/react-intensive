@@ -1,0 +1,29 @@
+@use '@styles' as s;
+
+$color-link: rgb(26, 64, 118);
+
+.navigation {
+	padding: 10px;
+	border: 1px solid s.$color-border;
+}
+
+.navigationLv1 {
+	margin: 20px 0;
+}
+
+.navigationLv2 {
+	padding-left: 20px;
+	margin: 10px 0;
+}
+
+.navigationLv3 {
+	padding-left: 20px;
+	margin: 10px 0;
+	color: $color-link;
+
+  @include s.hover {
+    color: s.$color-bg-btn;
+
+    @include s.transition(color);
+  }
+}
