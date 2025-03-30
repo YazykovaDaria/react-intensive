@@ -9,7 +9,7 @@
 }
 
 .item {
-  @include s.hover() {
+  @include s.hover {
     color: green;
     @include s.transition(color);
   }

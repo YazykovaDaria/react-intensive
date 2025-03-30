@@ -10,3 +10,4 @@ export * from './ui/inputs/index.ts';
 export * from './ui/icons/index.ts';
 export * from './ui/buttons/index.ts';
 export * from './ui/cards/index.ts';
+export * from './ui/navigation/index.ts';

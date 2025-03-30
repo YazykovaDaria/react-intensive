@@ -2,6 +2,7 @@
 
 .layout {
   @include s.flexCol(null, center);
+
   width: 100%;
   max-width: 1440px;
   height: 100dvh;
@@ -9,5 +10,6 @@
 
 .main {
   @include s.flexRow(null, center, center);
+
   height: 100%;
 }

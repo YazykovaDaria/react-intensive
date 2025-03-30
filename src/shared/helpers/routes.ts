@@ -7,6 +7,7 @@ type Routes = {
   main: Route;
   randomPost: Route;
   landing: Route;
+  navigation: Route;
 };
 
 export const routes: Routes = {
@@ -21,5 +22,9 @@ export const routes: Routes = {
   landing: {
     getLink: () => '/landing',
     pathname: '/landing',
+  },
+  navigation: {
+    getLink: () => '/navigation',
+    pathname: '/navigation',
   },
 };
