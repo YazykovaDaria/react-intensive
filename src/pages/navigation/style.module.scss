@@ -2,5 +2,6 @@
 
 .container {
 	@include s.flexRow(null, center, center);
+
 	min-height: 100vh;
 }
