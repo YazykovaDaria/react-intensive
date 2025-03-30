@@ -11,14 +11,9 @@ const USER_READ_PERMISSIONS = [
   // 'events',
 ];
 
-const checkHasUserPermission = (routeName: string) => {
+const checkHasUserPermission = async (routeName: string) => {
   return USER_READ_PERMISSIONS.includes(routeName);
 };
-
-// Со звездочкой проверка прав асинхронная
-// const checkHasUserPermission = async (routeName) => {
-// 	return USER_READ_PERMISSIONS.includes(routeName)
-// }
 
 export const NavigationPage = () => {
   return (

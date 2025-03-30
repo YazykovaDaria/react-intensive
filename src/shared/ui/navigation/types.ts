@@ -15,5 +15,5 @@ export type LevelStyles = { [key: string]: string };
 
 export type NavigationWithPermissionsProps = {
   navigationList: NavigationList[] | Route[];
-  checkPermission: (routeName: string) => boolean;
+  checkPermission: (routeName: string) => Promise<boolean>;
 };
