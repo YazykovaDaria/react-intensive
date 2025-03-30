@@ -4,6 +4,7 @@ import {
   MainPage,
   RandomPostPage,
   LandingPage,
+  NavigationPage,
 } from '@pages/index';
 import { routes, Layout } from '@shared/index';
 
@@ -19,7 +20,13 @@ const router = createBrowserRouter([
   },
   {
     path: routes.landing.pathname,
-    children: [{ path: routes.landing.getLink(), element: <LandingPage /> }],
+    children: [{ path: routes.landing.pathname, element: <LandingPage /> }],
+  },
+  {
+    path: routes.navigation.pathname,
+    children: [
+      { path: routes.navigation.pathname, element: <NavigationPage /> },
+    ],
   },
 ]);
 
