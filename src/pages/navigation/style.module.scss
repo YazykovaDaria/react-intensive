@@ -1,0 +1,7 @@
+@use '@styles' as s;
+
+.container {
+	@include s.flexRow($align:center, $justify:center);
+
+	min-height: 100vh;
+}
