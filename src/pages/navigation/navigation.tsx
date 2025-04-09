@@ -21,7 +21,7 @@ export const NavigationPage = () => {
       <NavigationWithPermissions
         navigationList={navigationList}
         checkPermission={checkHasUserPermission}
-      ></NavigationWithPermissions>
+      />
     </div>
   );
 };
