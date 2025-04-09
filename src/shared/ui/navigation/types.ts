@@ -10,10 +10,3 @@ export type NavigationList = {
   text: string;
   children: NavigationList[] | Route[];
 };
-
-export type LevelStyles = { [key: string]: string };
-
-export type NavigationWithPermissionsProps = {
-  navigationList: NavigationList[] | Route[];
-  checkPermission: (routeName: string) => Promise<boolean>;
-};

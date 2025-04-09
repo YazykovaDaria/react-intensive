@@ -1,15 +1,14 @@
-import { ReactElement, useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import s from './style.module.scss';
+import { Route, NavigationList } from './types';
 import {
-  Route,
-  NavigationList,
-  LevelStyles,
-  NavigationWithPermissionsProps,
-} from './types';
+  generateNavigationListWithPermissions,
+  isNavigationList,
+} from './helpers';
 
-const levelStyles: LevelStyles = {
-  1: s.navigationLv1,
-  2: s.navigationLv2,
+type NavigationWithPermissionsProps = {
+  navigationList: NavigationList[] | Route[];
+  checkPermission: (routeName: string) => Promise<boolean>;
 };
 
 const getLinkElement = (route: Route) => (
@@ -18,64 +17,44 @@ const getLinkElement = (route: Route) => (
   </a>
 );
 
-const isNavigationList = (item: NavigationList | Route) => 'children' in item;
+const getListUi = (list: NavigationList[] | Route[], level = 1) => {
+  const elements = list.map((item) => {
+    const isList = isNavigationList(item);
 
-const generateNavigationListWithPermissions = async ({
-  navigationList,
-  checkPermission,
-  level = 1,
-}: NavigationWithPermissionsProps & { level?: number }): Promise<
-  ReactElement[]
-> => {
-  const elements = await Promise.all(
-    navigationList.map(async (item) => {
-      const isList = isNavigationList(item);
+    const childrenElements = isList ? getListUi(item.children, level + 1) : [];
 
-      const childrenElements = isList
-        ? await generateNavigationListWithPermissions({
-            navigationList: item.children,
-            checkPermission,
-            level: level + 1,
-          })
-        : [];
+    if (!isList) {
+      return getLinkElement(item);
+    }
 
-      if (!isList) {
-        return (await checkPermission(item.name)) ? getLinkElement(item) : null;
-      }
+    return (
+      <ul key={item.name} className={s[`navigationLv${level}`]}>
+        <li>{item.text}</li>
+        {childrenElements.map((child, i) => (
+          <li key={i}>{child}</li>
+        ))}
+      </ul>
+    );
+  });
 
-      if (childrenElements.length === 0) {
-        return null;
-      }
-
-      return (
-        <ul className={levelStyles[level]} key={item.name}>
-          <li>{item.text}</li>
-          {childrenElements.map((child, i) => (
-            <li key={i}>{child}</li>
-          ))}
-        </ul>
-      );
-    })
-  );
-
-  return elements.filter(Boolean) as ReactElement[];
+  return elements;
 };
 
 export const NavigationWithPermissions = ({
   navigationList,
   checkPermission,
 }: NavigationWithPermissionsProps) => {
-  const [isChecking, setIsChecking] = useState(false);
-  const [navigation, setNavigation] = useState<ReactElement[]>([]);
+  const [isChecking, setIsChecking] = useState(true);
+  const [navigation, setNavigation] = useState<NavigationList[]>([]);
 
   useEffect(() => {
     const getNavigation = async () => {
-      setIsChecking(true);
       try {
         const navigation = await generateNavigationListWithPermissions({
           navigationList,
           checkPermission,
         });
+
         setNavigation(navigation);
       } catch (error) {
         console.log(error);
@@ -91,7 +70,7 @@ export const NavigationWithPermissions = ({
     <>
       {isChecking && <span>Loading...</span>}
       {navigation.length > 0 ? (
-        <nav className={s.navigation}>{navigation}</nav>
+        <nav className={s.navigation}>{...getListUi(navigation)}</nav>
       ) : null}
     </>
   );
