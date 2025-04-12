@@ -1,16 +1,10 @@
-type Route = {
-  getLink: () => string;
+export type Route = {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  getLink: (...params: any) => string;
   pathname: string;
 };
 
-type Routes = {
-  main: Route;
-  randomPost: Route;
-  landing: Route;
-  navigation: Route;
-};
-
-export const routes: Routes = {
+export const routes = {
   main: {
     getLink: () => '/',
     pathname: '/',
@@ -27,4 +21,16 @@ export const routes: Routes = {
     getLink: () => '/navigation',
     pathname: '/navigation',
   },
-};
+  articles: {
+    pathname: '/articles',
+    getLink: () => '/articles',
+  },
+  createArticle: {
+    pathname: '/articles/create',
+    getLink: () => '/articles/create',
+  },
+  updateArticle: {
+    pathname: '/articles/:id',
+    getLink: (id: string) => `/articles/${id}`,
+  },
+} as const satisfies Record<string, Route>;
