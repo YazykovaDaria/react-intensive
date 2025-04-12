@@ -14,8 +14,3 @@
     @include s.transition(color);
   }
 }
-
-.active {
-  color: blue;
-  pointer-events: none;
-}

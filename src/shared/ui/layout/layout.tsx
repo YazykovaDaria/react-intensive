@@ -1,10 +1,14 @@
+import { ReactElement } from 'react';
 import { Outlet } from 'react-router';
-import { Header } from './header';
 import s from './layout.module.scss';
 
-export const Layout = () => (
+type LayoutProps = {
+  header?: ReactElement;
+};
+
+export const Layout = ({ header }: LayoutProps) => (
   <div className={s.layout}>
-    <Header></Header>
+    {header}
     <main className={s.main}>
       <Outlet></Outlet>
     </main>

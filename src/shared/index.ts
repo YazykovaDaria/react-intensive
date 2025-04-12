@@ -1,6 +1,6 @@
 export { routes } from './helpers/routes';
 
-export { fetchGet } from './api/fetchGet';
+export * from './api/index.ts';
 
 export { BASE_URL } from './const/url';
 

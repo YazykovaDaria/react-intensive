@@ -7,3 +7,5 @@ export { NotFoundPage } from './not-found/not-found';
 export { LandingPage } from './landing/landing';
 
 export { NavigationPage } from './navigation/navigation';
+
+export * from './articles/index';
