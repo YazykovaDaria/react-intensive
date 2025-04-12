@@ -1,0 +1,9 @@
+@use '@styles' as s;
+
+.card {
+  @include s.flexCol(14px);
+
+  padding: 10px;
+  border: 1px solid s.$color-border;
+  border-radius: 20px;
+}

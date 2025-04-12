@@ -1,0 +1,7 @@
+@use '@styles' as s;
+
+.cards {
+  @include s.flexRow(14px, center);
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
