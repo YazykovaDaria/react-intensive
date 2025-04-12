@@ -5,8 +5,6 @@ import s from './style.module.scss';
 export const ArticlesPage = () => {
   const { data: articles, status, isPending } = useGetArticles();
 
-  console.log(articles);
-
   if (isPending) {
     return <span>Loading...</span>;
   }

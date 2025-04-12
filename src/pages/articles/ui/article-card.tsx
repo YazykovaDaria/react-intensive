@@ -3,7 +3,7 @@ import { useDeleteArticle } from '@entities/article';
 import s from './style.module.scss';
 
 export const ArticleCard = ({ id, title, content }: Article) => {
-  const { mutate: deleteArticle } = useDeleteArticle();
+  const { mutate: deleteArticle, isPending } = useDeleteArticle();
 
   return (
     <article className={s.card}>
@@ -15,7 +15,9 @@ export const ArticleCard = ({ id, title, content }: Article) => {
           <p>{content.description}</p>
         </div>
       )}
-      <Button onClick={() => deleteArticle(id)}>Delete article</Button>
+      <Button onClick={() => deleteArticle(id)} disabled={isPending}>
+        Delete article
+      </Button>
     </article>
   );
 };

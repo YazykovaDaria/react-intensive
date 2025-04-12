@@ -1,0 +1,22 @@
+@use '@styles' as s;
+
+.form {
+@include s.flexCol(24px, center);
+margin-top: 24px;
+}
+
+.field {
+  @include s.flexCol(8px);
+  width: 100%;
+}
+
+.error {
+  color: red;
+}
+
+.select {
+  width: 100%;
+  padding: 10px 15px;
+  border: 1px solid s.$color-border;
+  border-radius: 10px;
+}
