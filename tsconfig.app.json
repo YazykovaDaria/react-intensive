@@ -9,7 +9,7 @@
     "paths": {
       "@public/*": ["./public/*"],
       "@app/*": ["./src/app/*"],
-      "@views/*": ["./src/views/*"],
+      "@features/*": ["./src/features/*"],
       "@widgets/*": ["./src/widgets/*"],
       "@pages/*": ["./src/pages/*"],
       "@entities/*": ["./src/entities/*"],
