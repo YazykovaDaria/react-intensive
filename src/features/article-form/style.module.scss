@@ -2,11 +2,13 @@
 
 .form {
 @include s.flexCol(24px, center);
+
 margin-top: 24px;
 }
 
 .field {
   @include s.flexCol(8px);
+
   width: 100%;
 }
 
